@@ -9,6 +9,7 @@ const int START_PIN = 7;
 
 unsigned long start_time = 0;
 bool waiting_for_reaction = false;
+long randomNumber = random(3000, 5000);
 
 void setup() {
   Serial.begin(9600);
@@ -35,7 +36,7 @@ void loop() {
     // Wait for button to go high
     while (digitalRead(BUTTON_PIN) == LOW) {}
 
-    Start_Test(3000);
+    Start_Test(randomNumber);
   }
 
   // If we are waiting for reaction, measure time until button press
